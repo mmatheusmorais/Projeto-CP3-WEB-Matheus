@@ -535,3 +535,16 @@ nav ul li a.ativo {
     margin-top: 8px;
     display: block;
 }
+
+footer {
+    text-align: center;
+    padding: 28px;
+    background-color: var(--preto-2);
+    border-top: 1px solid var(--linha);
+    color: rgba(176,184,193,0.4);
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+footer strong { color: var(--laranja); font-weight: 400; }

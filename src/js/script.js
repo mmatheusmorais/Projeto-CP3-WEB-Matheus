@@ -136,3 +136,18 @@ function configurarDesconto() {
         btn.textContent = 'Desconto já aplicado';
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarProdutos();
+    renderizarCarrinho();
+    configurarDesconto();
+
+    // Marca o link ativo na nav
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+        if (link.getAttribute('href') === window.location.pathname.split('/').pop() ||
+            (window.location.pathname.endsWith('/') && link.getAttribute('href').includes('index'))) {
+            link.classList.add('ativo');
+        }
+    });
+});
