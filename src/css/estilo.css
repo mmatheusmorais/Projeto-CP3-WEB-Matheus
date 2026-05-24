@@ -27,7 +27,47 @@ body {
     min-height: 100vh;
 }
 
-/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--preto-2); }
 ::-webkit-scrollbar-thumb { background: var(--laranja); border-radius: 3px; }
+
+header {
+    background-color: rgba(8,10,13,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--linha);
+    padding: 0 52px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--fonte-display);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--branco);
+    text-transform: uppercase;
+}
+
+.logo span { color: var(--laranja); }
+
+nav ul { list-style: none; display: flex; gap: 4px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(240,242,245,0.55);
+    font-weight: 500;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 7px 16px;
+    border-radius: var(--raio);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    display: block;
+}
