@@ -93,3 +93,46 @@ function renderizarProdutos() {
         </article>
     `).join('');
 }
+
+let descontoAplicado = false;
+
+function calcularTotal(lista) {
+    return lista.reduce((acc, item) => acc + item.preco * item.qtd, 0);
+}
+
+function renderizarCarrinho() {
+    const container = document.getElementById('carrinho-container');
+    const totalEl   = document.getElementById('total-valor');
+    if (!container || !totalEl) return;
+
+    container.innerHTML = carrinho.map(item => `
+        <li class="carrinho-item">
+            <span class="item-nome">${item.nome}</span>
+            <span class="item-qtd">QTD: ${item.qtd}</span>
+            <span class="item-preco">${formatarPreco(item.preco * item.qtd)}</span>
+        </li>
+    `).join('');
+
+    const total = calcularTotal(carrinho);
+    totalEl.innerHTML = `<span>R$</span> ${total.toLocaleString('pt-BR', { minimumFractionDigits: 0 })}`;
+}
+
+function configurarDesconto() {
+    const btn = document.getElementById('btn-desconto');
+    const msg = document.getElementById('msg-desconto');
+    const totalEl = document.getElementById('total-valor');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        if (descontoAplicado) return;
+        descontoAplicado = true;
+
+        const totalOriginal = calcularTotal(carrinho);
+        const totalComDesconto = totalOriginal * 0.9;
+
+        totalEl.innerHTML = `<span>R$</span> ${totalComDesconto.toLocaleString('pt-BR', { minimumFractionDigits: 0 })}`;
+        msg.textContent = '✔ Desconto de 10% aplicado com sucesso!';
+        btn.disabled = true;
+        btn.textContent = 'Desconto já aplicado';
+    });
+}
