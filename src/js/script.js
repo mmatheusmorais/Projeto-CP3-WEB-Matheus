@@ -71,3 +71,25 @@ function formatarPreco(valor) {
         maximumFractionDigits: 0
     });
 }
+
+function renderizarProdutos() {
+    const container = document.getElementById('produtos-container');
+    if (!container) return;
+
+    container.innerHTML = produtos.map(p => `
+        <article class="card">
+            <div class="card-img-wrap">
+                <img src="${p.img}" alt="${p.nome}" loading="lazy">
+            </div>
+            <div class="card-info">
+                <span class="card-cat">${p.categoria}</span>
+                <h3>${p.nome}</h3>
+                <p>${p.descricao}</p>
+                <div class="card-footer">
+                    <span class="preco">${formatarPreco(p.preco)}</span>
+                    <a href="./pages/loja.html" class="btn-card">Ver no carrinho</a>
+                </div>
+            </div>
+        </article>
+    `).join('');
+}
