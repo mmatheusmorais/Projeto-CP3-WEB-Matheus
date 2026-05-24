@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --laranja: #ff4d00;
+    --laranja-escuro: #c23a00;
+    --laranja-glow: rgba(255, 77, 0, 0.18);
+    --cinza-aco: #b0b8c1;
+    --branco: #f0f2f5;
+    --preto: #080a0d;
+    --preto-2: #10131a;
+    --preto-3: #181c26;
+    --preto-4: #222736;
+    --linha: rgba(255,255,255,0.07);
+    --fonte-display: 'Russo One', sans-serif;
+    --fonte: 'DM Sans', sans-serif;
+    --raio: 4px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--preto);
+    color: var(--branco);
+    min-height: 100vh;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--preto-2); }
+::-webkit-scrollbar-thumb { background: var(--laranja); border-radius: 3px; }
