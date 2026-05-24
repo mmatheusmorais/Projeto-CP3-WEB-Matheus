@@ -464,3 +464,74 @@ nav ul li a.ativo {
     text-transform: uppercase;
     min-height: 20px;
 }
+
+.sobre-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 52px 100px;
+}
+
+.sobre-wrapper h1 {
+    font-family: var(--fonte-display);
+    font-size: 2.6rem;
+    color: var(--branco);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.sobre-wrapper h1 span { color: var(--laranja); }
+
+.sobre-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--laranja);
+    margin-bottom: 40px;
+    border-radius: 2px;
+}
+
+.sobre-wrapper p {
+    font-size: 1rem;
+    color: var(--cinza-aco);
+    line-height: 1.95;
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.sobre-wrapper strong {
+    color: var(--branco);
+    font-weight: 600;
+}
+
+.sobre-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--linha);
+    border: 1px solid var(--linha);
+    margin-top: 56px;
+}
+
+.stat-item {
+    background: var(--preto-2);
+    padding: 32px 28px;
+    text-align: center;
+}
+
+.stat-item .num {
+    font-family: var(--fonte-display);
+    font-size: 2.8rem;
+    color: var(--laranja);
+    display: block;
+    letter-spacing: 2px;
+}
+
+.stat-item .label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--cinza-aco);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 8px;
+    display: block;
+}
